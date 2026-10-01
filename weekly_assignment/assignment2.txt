@@ -1,0 +1,89 @@
+Question:1
+
+Employee Details
+Create a Java program to store and print the following employee details:
+•	Employee ID
+•	Age
+•	Salary
+•	Department Initial
+•	Whether the employee is permanent
+Use appropriate primitive data types.
+Expected Output:
+Employee ID: 1001
+Age: 28
+Salary: 55000.50
+Department: T
+Permanent: true
+
+eclipse program and output:
+
+package assignment2;
+
+public class employeeDetails {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		short employeeID=1001;
+		System.out.println("Employee ID: "+employeeID);
+		
+		int age=28;
+		System.out.println("Age: "+age);
+		
+		double salary=55000.50;
+		System.out.println("Salary: "+salary);
+		
+		char department='T';
+		System.out.println("Department: "+department);
+		
+		boolean permanent=true;
+		System.out.println("Permanent: "+permanent);
+		
+		
+	}
+
+}
+
+output:
+
+Employee ID: 1001
+Age: 28
+Salary: 55000.5
+Department: T
+Permanent: true
+
+Question 2:
+
+Create a Java program with the following variables:
+•	Product Price = 499.50
+•	Quantity = 3
+Calculate the total price using the variables and print:
+Product Price: 499.50
+Quantity: 3
+Total Price: 1498.50
+
+Eclipse program and output:
+
+package assignment2;
+
+public class Program_ProductDetails {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float productPrice=499.50F;
+		int quantity=3;
+		float price=productPrice*quantity;
+		
+		System.out.println("Product Price: "+productPrice);
+		System.out.println("Quantity: "+quantity);
+		System.out.println("Total Price: "+price);
+
+	}
+
+}
+
+Output:
+
+Product Price: 499.5
+Quantity: 3
+Total Price: 1498.5
+

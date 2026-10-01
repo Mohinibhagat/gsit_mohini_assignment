@@ -1,0 +1,110 @@
+Question1:
+Write a Java program to print the ASCII value of the following characters:
+•	A 
+•	a 
+•	0 
+•	@ 
+Expected Output:
+ASCII value of A = 65
+ASCII value of a = 97
+ASCII value of 0 = 48
+ASCII value of @ = 64
+
+
+Code:
+package dailyAssignment;
+
+public class Program_ASCIICode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char alpha1='A';
+		int num=alpha1;
+		System.out.println("ASCII Value of A = "+num);
+		
+		char alpha2='a';
+		int num1=alpha2;
+		System.out.println("ASCII Value of a = "+num1);
+		
+		char alpha3='0';
+		int num2=alpha3;
+		System.out.println("ASCII Value of 0 = "+num2);
+		
+		char alpha4='@';
+		int num3=alpha4;
+		System.out.println("ASCII Value of @ = "+num3);
+		
+		
+  
+	}
+
+}
+
+Output:
+ASCII Value of A = 65
+ASCII Value of a = 97
+ASCII Value of 0 = 48
+ASCII Value of @ = 64
+
+Question2:
+Write a Java program to print the following triangle pattern using only System.out.println() statements.
+Expected Output:
+*
+**
+***
+****
+*****
+
+Code:
+
+package dailyAssignment;
+
+public class Program_Pattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("*");
+		System.out.println("**");
+		System.out.println("***");
+		System.out.println("****");
+		System.out.println("*****");
+		
+
+	}
+
+Output:
+*
+**
+***
+****
+*****
+
+Question3:
+
+Create a Java program that:
+1.	Stores 10.75 in a double variable. 
+2.	Explicitly typecasts it to an int variable. 
+3.	Prints both values.
+
+Code:
+package dailyAssignment;
+
+public class Program_TypeCast {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double value1=10.75;
+		int value2=(int)value1;
+		System.out.println(value1);
+		System.out.println(value2);
+		
+
+	}
+
+}
+
+Output:
+
+10.75
+10
+

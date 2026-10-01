@@ -1,0 +1,61 @@
+Question1:
+Write a Java program to check whether the given number 10 is positive or negative.
+Sample Output:
+The number is positive.
+
+Code:
+package dailyAssignment;
+
+public class Program_PositiveNagitiveNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num=10;
+		if(num>0)
+		{
+			System.out.println("The number is positive.");
+	
+		}
+		else if(num<0)
+		{
+			System.out.println("The number is Negative.");
+		}
+		else
+		{
+			System.out.println("The number is zero.");
+		}
+
+	}
+
+}
+
+Output:
+The number is positive.
+
+Question2:
+Write a Java program to check whether the given number 15 is even or odd.
+Sample Output:
+The number is odd.
+
+Code:
+package dailyAssignment;
+
+public class Program_EvenOddNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num=15;
+		
+		if(num%2==0)
+		{
+			System.out.println("The number is even.");
+		}
+		else
+			System.out.println("The number is odd.");
+
+	}
+
+}
+
+Output:
+The number is odd.
