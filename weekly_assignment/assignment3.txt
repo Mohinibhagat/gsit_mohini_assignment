@@ -70,7 +70,32 @@ Expected Output:
 153 is an Armstrong number
 
 Code:
+package weeklyAssignment;
 
+public class Program_ArmstrongNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num=153;
+		int originalNum=num;
+		int armstrong=0;
+		for(;num>0;)
+		{
+			int lastDigit=num%10;
+			armstrong=armstrong+lastDigit*lastDigit*lastDigit;
+			num=num/10;
+		}
+          
+          if(originalNum==armstrong)
+          {
+        	  System.out.println(armstrong +" is an Armstrong number");
+          }
+	}
+
+}
+
+Output:
+153 is an Armstrong number
 
 
 Question4
