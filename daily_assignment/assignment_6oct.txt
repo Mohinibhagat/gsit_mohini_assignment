@@ -1,0 +1,175 @@
+Question1:
+1)Inverted Right-Angled Triangle
+For n = 5:
+*****
+****
+***
+**
+*
+
+Code:
+package dailyAssignment;
+
+public class Program_InvertedrightangleTriangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int rows=1;rows<=5;rows++)
+		{
+			for(int col=1;col<=5-rows+1;col++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+Output:
+*****
+****
+***
+**
+*
+
+Question2:
+
+2)Increasing Number Triangle
+For n = 5:
+1
+12
+123
+1234
+12345
+
+Code:
+package dailyAssignment;
+
+public class Program_IncresingNumberTriangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int count=1;
+		for(int rows=1;rows<=5;rows++)
+		{
+			for(int i=1;i<=rows;i++)
+			{
+				
+				System.out.print(i);
+				//count++;
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+Output:
+1
+12
+123
+1234
+12345
+
+Question3:
+3)Repeated Number Triangle
+1
+22
+333
+4444
+55555
+
+Code:
+package dailyAssignment;
+
+public class Program_RepeatedNumberTriangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int count=1;
+		for(int rows=1;rows<=5;rows++)
+		{
+			for(int i=1;i<=rows;i++)
+			{
+				
+				System.out.print(rows);
+				
+			}
+			System.out.println();
+		}
+
+	}
+
+}
+
+Output:
+1
+22
+333
+4444
+55555
+
+Question4:
+
+4)Butterfly Pattern
+For n = 5:
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+
+
+
+Code:
+package dailyAssignment;
+
+public class Program_butterflyPattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int row=1;row<=5;row++)
+		{
+			for(int star=1;star<=row;star++)
+				System.out.print("*");
+		
+		    for(int sp=1;sp<=10-2*row;sp++)
+			 System.out.print(" ");
+		    
+		    for(int star=1;star<=row;star++)
+				System.out.print("*");
+		    System.out.println();
+		}   
+       for(int row=1;row<=4;row++)
+       {
+    	   for(int star=1;star<=5-row;star++)
+    		   System.out.print("*");
+    	   
+    	   for(int sp=1;sp<=2*row;sp++)
+    		   System.out.print(" ");
+    	   
+    	   for(int star=1;star<=5-row;star++)
+    		   System.out.print("*");
+    	   System.out.println();
+       }
+	}
+
+}
+
+
+output:
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *

@@ -67,47 +67,45 @@ Final Digit = 1
 Code:
 package dailyAssignment;
 
-public class Program_MagicNumber {
+public class Program_MagicNumber2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int num=172;
-		int original=num;
 		System.out.println("Enter a number: "+num);
 		System.out.println();
 		System.out.println();
 		int sum=0;
-		int finalDigit=0;
-		for(;num>0;)
-		{
-			int lastDigit=num%10; //4
-			sum=sum+lastDigit;
-			num=num/10;
-		}
-		System.out.println("Digit Sum = "+sum);
 		
-		for(;sum>0;)
+		for(;num>9;)
 		{
-			int lastDigit1=sum%10;
-			finalDigit=finalDigit+lastDigit1;
-			sum=sum/10;
+			for(;num>0;)
+			{
+				int lastDigit=num%10;
+				sum=sum+lastDigit;
+				num=num/10;
+				
+			}
+			num=sum;
+			sum=0;
+		
 		}
-		System.out.println("Final Digit = "+finalDigit);
-		System.out.println();
-		System.out.println();
-		if(finalDigit==1);
-		{
-			System.out.println(original+" is a Magic Number");
-		}
-
+		//System.out.println("Digit Sum = "+num);
+         System.out.println("Final Digit = "+num);
+         System.out.println();
+         System.out.println();
+         if(num==1)
+          System.out.println(num+" is a Magic Number");
+	
 	}
+
+}
 
 Output
 
 Enter a number: 172
 
 
-Digit Sum = 10
 Final Digit = 1
 
 
