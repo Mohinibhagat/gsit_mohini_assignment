@@ -1,0 +1,218 @@
+Question1:
+ Q1. Find the Second Largest Element
+Write a Java program to find the **second largest distinct element** in an integer array.
+
+**Input:**
+`{12, 45, 7, 89, 34, 89, 56}`
+
+**Expected Output:**
+`Second largest element: 56`
+
+Code:
+package weeklyAssignment;
+
+public class Program_SecondLargestElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[]num= {12, 45, 7, 89, 34, 89, 56};
+		System.out.println("Second largest element: ");
+		int temp=0;
+		for(int i=0;i<num.length;i++)
+		{
+			for(int j=i+1;j<num.length;j++)
+			{
+				if(num[i]<num[j])
+				{
+					temp=num[i];
+					num[i]=num[j];
+					num[j]=temp;
+				}
+			}
+		}
+		if(num[0]==num[1])
+		{
+			System.out.println(num[2]);
+		}
+		else
+        System.out.println(num[1]);
+	}
+
+}
+
+Output:
+Second largest element: 
+56
+
+Question2:
+Q2. Move All Zeros to the End
+Write a Java program to move all zeros to the end of an array while maintaining the relative order of the non-zero elements.
+
+**Input:**
+{0, 5, 0, 3, 8, 0, 2, 9}`
+
+**Expected Output:**
+`Array after moving zeros: 5 3 8 2 9 0 0 0
+
+Code:
+package weeklyAssignment;
+
+public class Program_MoveAllZeroToEnd {
+
+	public static void main(String[] args) {
+		int arr[]= {0, 5, 0, 3, 8, 0, 2, 9};
+		System.out.print("Array after moving zeros:");
+		int index=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]!=0)
+			{
+			arr[index]=arr[i];
+			index++;
+			}
+		}
+		while(index<arr.length)
+		{
+			arr[index]=0;
+					index++;
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(" "+arr[i]);
+		}
+	}
+
+}
+
+Output:
+Array after moving zeros: 5 3 8 2 9 0 0 0
+
+Question3:
+Q3. Find the Missing Number
+
+Write a Java program to find the missing number in an array containing distinct numbers from 1 to 10, with one number missing.
+
+Input:
+{1, 2, 3, 5, 6, 7, 8, 9, 10}
+
+Expected Output:
+Missing number: 4
+
+Code:
+package weeklyAssignment;
+
+public class Program_MissingNumber {
+
+	public static void main(String[] args) {
+		int arr[]= {1,2,3,5,6,7,8,9};
+		System.out.print("Missing Number: ");
+		int n=arr.length+1;
+		int expectedSum = n*(n+1)/2;
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			sum=sum+arr[i];
+		}
+      System.out.print(expectedSum-sum);
+	}
+
+}
+
+Output:
+Missing Number: 4
+
+Question 4:
+Q4. Find Common Elements in Two Arrays
+
+Write a Java program to find the common elements between two integer arrays. Print each common element only once.
+
+Input:
+
+Array 1: {10, 20, 30, 40, 50}
+Array 2: {30, 40, 60, 70, 50}
+
+Expected Output:
+Common elements: 30 40 50
+
+Q5. Separate Positive and Negative Numbers
+
+Code:
+package dailyAssignment;
+
+public class Program_CommonElementArray {
+
+	public static void main(String[] args) {
+		
+		int []num1= {10,20,30,40,50};
+		int []num2= {30,40,60,70,50};
+		System.out.print("Common elements: ");
+		
+		for(int i=0;i<num1.length;i++)
+		{
+			for(int j=0;j<num2.length;j++)
+			{
+				if(num1[i]==num2[j])
+				{
+				System.out.print(num1[i]+" ");
+				}
+			}
+			
+		}
+		
+
+	}
+
+}
+
+Output:
+Common elements: 30 40 50 
+
+Question 5:
+Q5. Separate Positive and Negative Numbers
+
+Write a Java program to print all positive numbers first, followed by all negative numbers and zeros, while maintaining the original order within each group.
+
+Input:
+{-4, 7, 0, -2, 9, 0, -8, 5}
+
+Expected Output:
+7 9 5 -4 -2 -8 0 0
+
+Code:
+package weeklyAssignment;
+
+public class Program_SeparatePositiveNagativeNumber {
+
+	public static void main(String[] args) {
+		int arr[]= {7, 9, 5, -4, -2, -8, 0, 0};
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]>0)
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]<0)
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]==0)
+			{
+				System.out.print(arr[i]+" ");
+			}
+		}
+		
+		
+
+	}
+
+}
+
+
+Output:
+7 9 5 -4 -2 -8 0 0

@@ -1,0 +1,85 @@
+Question1:
+Q1. Count Even and Odd Numbers
+
+Write a Java program to count how many even and odd numbers are present in an integer array.
+
+Input:
+{11, 24, 35, 42, 56, 67, 80, 93}
+
+Expected Output:
+Even numbers: 4
+
+Odd numbers: 4
+
+Code:
+package dailyAssignment;
+
+public class Program_Array_EvenOdd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int []integer = {11, 24, 35, 42, 56, 67, 80, 93};
+		int evencount=0;
+		int oddcount=0;
+		for(int index=0;index<integer.length;index++)
+		{
+			if(integer[index]%2==0)
+			evencount++;
+			else {
+				oddcount++;
+			}
+				
+		}
+		System.out.println("Even numbers: "+evencount);
+		System.out.println();
+		System.out.println("Odd numbers: "+oddcount);
+
+	}
+
+}
+
+Output:
+Even numbers: 4
+
+Odd numbers: 4
+
+Question2:
+Q2. Find Duplicate Elements
+
+Write a Java program to identify and print all duplicate elements in an array. Each duplicate element should be printed only once.
+
+Input:
+{10, 20, 30, 20, 40, 10, 50, 30, 60}
+
+Expected Output:
+Duplicate elements: 10 20 30
+
+Code:
+package dailyAssignment;
+
+public class Program_DuplicateElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[]num ={10, 20, 30, 20, 40, 10, 50, 30, 60};
+		System.out.print("Duplicate Elements : ");
+		{
+		for(int i =0; i<num.length; i++)
+			for(int j =i+1; j<num.length;j++)
+			{
+				if(num[i] == num[j])
+				{
+					System.out.print(num[i] +" ");
+					break;
+				}
+			}
+		}
+
+		 
+	}
+
+}
+
+Output:
+Duplicate Elements : 10 20 30
+
