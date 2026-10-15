@@ -1,0 +1,43 @@
+Question:
+Calculate the Area of Different Shapes
+Write a Java program to demonstrate polymorphism 
+Requirements:
+
+1. Overload the calculateArea(int radius) method for circle 
+2. Overload the calculateArea(int length,int breadth) method for rectangle 
+Formulas:
+- Circle: Area = 3.14 Ã— radius Ã— radius
+- Rectangle: Area = length Ã— breadth
+Sample Input:
+Enter radius of circle: 5
+Enter length of rectangle: 8
+Enter breadth of rectangle: 4
+
+
+Expected Output:
+Area of Circle: 78.5
+Area of Rectangle: 32.0
+
+Code:
+package dailyAssignment2;
+
+public class Progran_PolymorphismcircleRadius {
+	 static float calculateArea(float radius)
+	    {
+	    	return 3.14F*radius*radius;
+	    }
+	 static int calculateArea(int length,int breadth)
+	 {
+		 return length*breadth;
+	 }
+
+	public static void main(String[] args) {
+		System.out.println("Area of Circle: "+calculateArea(5));
+        System.out.println("Area of Rectangle: "+calculateArea(8,4));
+	}
+
+}
+
+Output:
+Area of Circle: 78.5
+Area of Rectangle: 32
