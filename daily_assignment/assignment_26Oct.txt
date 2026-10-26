@@ -1,0 +1,158 @@
+Question:
+Assignment: Student Management System Using the static Keyword
+Objective: Understand the use of static variables, methods, and initialization blocks in Java.
+Problem Statement
+Create a Java program to manage student records for a college using a class named Student.
+Requirements
+1.	Create a class Student with the following variables:
+o	rollNumber — an instance variable.
+o	name — an instance variable.
+o	collegeName — a static variable initialized to "ABC Engineering College".
+o	studentCount — a static variable to track the total number of student objects created.
+2.	Create a parameterized constructor that accepts rollNumber and name. Every time a student object is created, increment studentCount.
+3.	Create a static method changeCollegeName() that accepts a new college name and updates the static variable.
+4.	Create an instance method displayDetails() that displays the student's roll number, name, and college name.
+5.	Create a static method displayStudentCount() that prints the total number of student objects created.
+6.	Create a static initialization block that prints a message when the Student class is initialized.
+Main Method Instructions
+In the main() method:
+1.	Create three student objects with different roll numbers and names.
+2.	Display the details of all three students.
+3.	Display the total number of students created.
+4.	Change the college name to "XYZ Institute of Technology" using the static method.
+5.	Display all three students' details again.
+6.	Call the static method using the class name instead of an object reference.
+Expected Output
+The output should follow this structure (the exact initialization message is up to you):
+Student class initialized.
+
+Roll Number: 101
+Name: Rahul
+College: ABC Engineering College
+
+Roll Number: 102
+Name: Priya
+College: ABC Engineering College
+
+Roll Number: 103
+Name: Amit
+College: ABC Engineering College
+
+Total Students: 3
+
+College name updated successfully.
+
+Roll Number: 101
+Name: Rahul
+College: XYZ Institute of Technology
+
+Roll Number: 102
+Name: Priya
+College: XYZ Institute of Technology
+
+Roll Number: 103
+Name: Amit
+College: XYZ Institute of Technology
+
+Total Students: 3
+Rules
+•	Use Java.
+•	Do not create separate copies of collegeName for individual objects.
+•	Access static variables and methods through the class name wherever appropriate.
+•	Do not use arrays or collections; create the three objects individually.
+•	Write clean, readable code with appropriate access modifiers.
+
+
+Code:
+package dailyAssignment2;
+class Student
+{
+	int rollnumber;
+	String name;
+	static String collegeName="ABC Engineering College";
+	static int studentCount=0;
+	
+	Student(int rollnumber, String name)
+	{
+		this.rollnumber=rollnumber;
+		this.name=name;
+		studentCount++;
+	}
+	
+	static void changeCollegeName() 
+	{
+		collegeName="XYZ Institute of Technology";
+	}
+	
+	void displayDetails() 
+	{
+		System.out.println("Roll Number: "+rollnumber);
+		System.out.println("Name: "+name);
+		System.out.println("College: "+collegeName);
+		System.out.println(" ");
+	}
+	
+	static void displayStudentCount() 
+	{
+		System.out.println("Total Students: "+studentCount);
+		System.out.println(" ");
+	}
+}
+
+public class Student_Managment {
+	static
+	{
+		System.out.println("Student class initilized");
+	}
+
+	public static void main(String[] args) {
+		Student s1=new Student(101, "Rahul");
+		s1.displayDetails();
+		Student s2=new Student(102, "Priya");
+		s2.displayDetails();
+		Student s3=new Student(103, "Amit");
+		s3.displayDetails();
+		Student.displayStudentCount();
+		Student.changeCollegeName();
+		System.out.println("College name updated successfully.\n");
+		s1.displayDetails();
+		s2.displayDetails();
+		s3.displayDetails();
+		Student.displayStudentCount();
+	}
+
+}
+
+
+Output:
+Student class initilized
+Roll Number: 101
+Name: Rahul
+College: ABC Engineering College
+ 
+Roll Number: 102
+Name: Priya
+College: ABC Engineering College
+ 
+Roll Number: 103
+Name: Amit
+College: ABC Engineering College
+ 
+Total Students: 3
+ 
+College name updated successfully.
+
+Roll Number: 101
+Name: Rahul
+College: XYZ Institute of Technology
+ 
+Roll Number: 102
+Name: Priya
+College: XYZ Institute of Technology
+ 
+Roll Number: 103
+Name: Amit
+College: XYZ Institute of Technology
+ 
+Total Students: 3
+ 
