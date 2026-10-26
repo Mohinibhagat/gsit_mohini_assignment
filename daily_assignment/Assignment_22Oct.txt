@@ -1,0 +1,224 @@
+Question 1:
+
+Task 1: Use of this Keyword 
+Create a class named Employee with the following instance variables:
+•	int employeeId
+•	String employeeName
+•	double salary
+Requirements:
+1.	Create a parameterized constructor that initializes all three instance variables.
+2.	Use the this keyword to distinguish instance variables from constructor parameters.
+3.	Create a method named displayDetails() to display employee information.
+4.	Create two employee objects with different values and display their details.
+
+
+Code:
+package dailyAssignment2;
+
+class Employee
+{
+	int employeeId;
+	String employeeName;
+	double salary;
+	
+	Employee(int employeeId1,String employeeName1,double salary1)
+	{
+		this.employeeId=employeeId1;
+		this.employeeName=employeeName1;
+		this.salary=salary1;
+		
+	}
+	void displayDetails()
+	{
+		System.out.println(employeeId+":"+employeeName+":"+salary);
+	}
+
+}
+
+public class EmployeeManagmentSystem {
+
+	public static void main(String[] args) {
+           Employee e1=new Employee(102,"Rahul",50000.30);
+           e1.displayDetails();
+           //System.out.println(e1.employeeId+":"+e1.employeeName+":"+e1.salary);
+           Employee e2=new Employee(103,"Sahil",65000.50);
+           e2.displayDetails();
+          // System.out.println(e2.employeeId+":"+e2.employeeName+":"+e2.salary);
+
+	}
+
+}
+
+Output:
+102:Rahul:50000.3
+103:Sahil:65000.5
+
+
+Question2:
+Create a class named Company with the following:
+1.	A final variable named COMPANY_NAME, initialized to "Tech Solutions Pvt. Ltd.".
+2.	A final variable named MAX_EMPLOYEES, initialized to 100.
+3.	A method that displays the company name and maximum employee limit.
+4.	Try changing the value of a final variable and observe the compiler error.
+
+
+Code
+package dailyAssignment2;
+
+class Employee
+{
+	int employeeId;
+	String employeeName;
+	double salary;
+	
+	Employee(int employeeId1,String employeeName1,double salary1)
+	{
+		this.employeeId=employeeId1;
+		this.employeeName=employeeName1;
+		this.salary=salary1;
+		
+	}
+	void displayDetails()
+	{
+		System.out.println(employeeId+":"+employeeName+":"+salary);
+	}
+
+}
+
+class Company
+{
+	final String COMPANY_NAME="Tech Solutions Pvt. Ltd.";
+	final int MAX_EMPLOYEES=100;
+	
+	void display()
+	{
+		System.out.println(COMPANY_NAME+":"+MAX_EMPLOYEES);
+		COMPANY_NAME="GrowskillIt";
+	}
+}
+
+public class EmployeeManagmentSystem {
+
+	public static void main(String[] args) {
+           Employee e1=new Employee(102,"Rahul",50000.30);
+           e1.displayDetails();
+           Employee e2=new Employee(103,"Sahil",65000.50);
+           e2.displayDetails();
+           Company c1=new Company();
+           c1.display();
+           //c1.COMPANY_NAME="agrow";
+
+	}
+
+}
+
+
+Output:
+102:Rahul:50000.3
+103:Sahil:65000.5
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The final field Company.COMPANY_NAME cannot be assigned
+
+	at dailyAssignment2.Company.display(EmployeeManagmentSystem.java:31)
+	at dailyAssignment2.EmployeeManagmentSystem.main(EmployeeManagmentSystem.java:43)
+
+
+Question 3
+1.	Create a class named Employee with a final method named calculateBonus().
+2.	Create a subclass named Manager that extends Employee.
+3.	Try overriding calculateBonus() in Manager.
+4.	Observe the compiler error and explain why the method cannot be overridden.
+
+Code:
+package dailyAssignment2;
+
+class Employee1
+{
+	final void calculateBonus()
+	{
+		System.out.println("Hello");
+	}
+}
+
+class Manager extends Employee1
+{
+	void calculateBonus()
+	{
+		System.out.println("Hi");
+	}
+}
+
+
+public class Employee_Bonus {
+
+	public static void main(String[] args) {
+	Manager m1=new Manager();
+	m1.calculateBonus();
+	/*Employee1 p1=new Employee1();
+	p1.calculateBonus();*/
+	}
+
+}
+
+Output:
+Exception in thread "main" java.lang.IncompatibleClassChangeError: class dailyAssignment2.Manager overrides final method dailyAssignment2.Employee1.calculateBonus()V
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:962)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:776)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:691)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:620)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:578)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at dailyAssignment2.Employee_Bonus.main(Employee_Bonus.java:23)
+
+method as final, you instruct the compiler that the method implementation is complete, secure, and must not be altered by any subclass
+
+Question4:
+1.	Create a class named SecurityPolicy and declare it as final.
+2.	Add a method named displayPolicy().
+3.	Create another class named AdminPolicy that attempts to extend SecurityPolicy.
+4.	Observe the compiler error and explain why a final class cannot be inherited.
+
+
+
+Code:
+package dailyAssignment2;
+
+final class SecurityPolicy
+{
+	void displayPolicy()
+	{
+		System.out.println("Hello");
+	}
+}
+
+class AdminPolicy extends SecurityPolicy
+{
+	void print()
+	{
+		System.out.println("Bye");
+	}
+	
+}
+
+
+public class FinalClass {
+
+	public static void main(String[] args) {
+	AdminPolicy s1=new AdminPolicy();
+	s1.print();
+
+	}
+
+}
+
+Output:
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	The type AdminPolicy cannot subclass the final class SecurityPolicy
+
+	at dailyAssignment2.AdminPolicy.<init>(FinalClass.java:11)
+	at dailyAssignment2.FinalClass.main(FinalClass.java:24)
+
+Object-oriented languages prevent the inheritance of final classes
+
