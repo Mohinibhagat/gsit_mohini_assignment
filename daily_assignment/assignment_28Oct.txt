@@ -1,0 +1,42 @@
+Question:
+Question : Character Wrapper Class
+Write a program using the Character wrapper class to:
+1. Check whether the character '7' is a digit.
+2. Check whether the character 'A' is a letter.
+3. Convert the character 'b' to uppercase.
+4. Print the results.
+Hint: Use Character.isDigit(), Character.isLetter(), and Character.toUpperCase().
+
+Code:
+package dailyAssignment2;
+
+public class Programm_wrapperClass {
+
+	public static void main(String[] args) {
+		
+			  
+			  char alpha1='7';
+				if(Character.isDigit(alpha1))
+					System.out.println(alpha1+" is Digit");
+				else
+					System.out.println(alpha1+" is Not Digit");
+				
+				char alpha2='A';
+				if(Character.isLetter(alpha2))
+					System.out.println(alpha2+" is Letter");
+				else
+					System.out.println(alpha2+" is Not Letter");	
+				
+				char alpha3='b';
+				char alpha4= Character.toUpperCase(alpha3);
+				System.out.println(alpha4);
+
+	}
+
+}
+
+
+Output:
+7 is Digit
+A is Letter
+B

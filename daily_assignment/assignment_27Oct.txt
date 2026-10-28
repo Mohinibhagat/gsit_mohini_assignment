@@ -1,0 +1,48 @@
+Question:
+Assignment:27th oct Scanner,Array
+
+Enter size of array
+3
+Enter element 1
+10
+Enter element 2
+20
+Enter element 3
+30
+Sum:60
+
+Code:
+package dailyAssignment2;
+import java.util.*;
+
+public class ScannerAssignment {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter size of array");
+		int size=sc.nextInt();
+		int arr[]=new int[size];
+		int sum=0;
+		for(int i=0;i<size;i++)
+		{
+			System.out.println("Enter element "+(i+1));
+			arr[i]=sc.nextInt();
+					sum=sum+arr[i];
+		}
+		System.out.println("sum:"+sum);
+
+	}
+
+}
+
+
+Output:
+Enter size of array
+3
+Enter element 1
+10
+Enter element 2
+20
+Enter element 3
+30
+sum:60
