@@ -1,0 +1,106 @@
+Question:
+
+Create an abstract class named Employee with the following details:
+Instance variables:
+•	employeeId – Integer
+•	employeeName – String
+Methods:	
+1.	calculateSalary() – Abstract method to calculate the employee's salary.
+2.	displayDetails() – Concrete method to display employee information.
+Create two child classes:
+Class 1: FullTimeEmployee
+•	Instance variable: monthlySalary
+•	Override calculateSalary() to return the fixed monthly salary.
+•	Override displayDetails() to display employee details and salary.
+Class 2: PartTimeEmployee
+•	Instance variables:
+o	hoursWorked
+o	hourlyRate
+•	Override calculateSalary() to calculate salary using:
+•	[ Salary = HoursWorked X HourlyRate ]
+
+
+
+Code:
+package dailyAssignment3;
+abstract class Employee
+{
+	int employeeId;
+	String employeeName;
+	abstract void calculateSalary();
+	abstract void displayDetails();
+}
+
+class FullTimeEmployee extends Employee
+{
+	int monthlySalary;
+	void calculateSalary()
+	{
+	 this.monthlySalary=50000;
+	 System.out.println("Monthly Salary: "+monthlySalary);
+	}
+	
+	void displayDetails()
+	{
+		this.employeeId=101;
+		this.employeeName="Rahul";
+		System.out.println("Employee ID: "+employeeId);
+		System.out.println("Employee Name: "+employeeName);
+	}
+}
+
+class PartTimeEmployee extends Employee
+{
+	int hoursWorked=80;
+	int hourlyRate=300;
+	void calculateSalary()
+	{
+		int salary=(hoursWorked*hourlyRate);
+		System.out.println("Hours Worked: "+hoursWorked);
+		System.out.println("Hourly Rate: "+hourlyRate);
+		System.out.println("Calculated Salary: "+salary);
+	    
+	}
+	void displayDetails()
+	{
+		this.employeeId=102;
+		this.employeeName="Amit";
+		System.out.println("Employee ID: "+employeeId);
+		System.out.println("Employee Name: "+employeeName);
+	}
+	
+	
+}
+
+public class Program_SalaryManagmentSystem {
+
+	public static void main(String[] args) {
+		FullTimeEmployee FE1=new FullTimeEmployee();
+		System.out.println("Full-Time Employee");
+		FE1.displayDetails();
+		FE1.calculateSalary();
+		PartTimeEmployee PE1=new PartTimeEmployee();
+		System.out.println("\nPart-Time Employee");
+		PE1.displayDetails();
+		PE1.calculateSalary();
+		
+		
+		
+
+	}
+
+}
+
+
+Output:
+Full-Time Employee
+Employee ID: 101
+Employee Name: Rahul
+Monthly Salary: 50000
+
+Part-Time Employee
+Employee ID: 102
+Employee Name: Amit
+Hours Worked: 80
+Hourly Rate: 300
+Calculated Salary: 24000

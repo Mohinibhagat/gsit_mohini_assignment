@@ -1,0 +1,159 @@
+Q1. Count Vowels and Consonants
+Write a Java program to count the total number of vowels and consonants in a given string.
+Example:
+Input:  Programming
+Output:
+Vowels: 3
+Consonants: 8
+
+
+Code:
+package WeeklyAssignment2;
+
+public class Program_VowelsConsonants {
+
+	public static void main(String[] args) {
+		String str="Programming";
+		String lowerstr=str.toLowerCase();
+		int vowels=0;
+		int consonants=0;
+		for(int i=0;i<lowerstr.length();i++)
+		{
+		char ch=lowerstr.charAt(i);
+		  if(ch>= 'a' && ch<= 'z')
+		  {
+			  if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+			  { 
+				  vowels++;
+			  }
+			  else
+				  consonants++;
+		  }
+			
+			
+			
+		}
+		
+        System.out.println("Vowels: "+vowels);
+        System.out.println("Consonants: "+consonants);
+        
+	}
+
+}
+
+Output:
+Vowels: 3
+Consonants: 8
+
+
+Q2. Find the Longest Word
+Write a Java program to find the longest word in a given sentence.
+Example:
+Input: Java programming is interesting
+Output: programming
+
+Code:
+package WeeklyAssignment2;
+
+public class Program_LongestWord {
+
+	public static void main(String[] args) {
+		String str="Java programming is interesting";
+		String words[]=str.split(" ");
+		String longword="";
+		for(String word:words)
+		{
+			if(word.length() > longword.length())
+			{
+				longword = word;
+			}
+		}
+         System.out.println(longword);
+	}
+
+}
+
+Output:
+programming
+
+
+Q3. 
+ Replace a Character in a String
+Write a Java program to replace all occurrences of a particular character with another character without using the replace() method.
+Example:
+Input:
+String: banana
+Old Character: a
+New Character: o
+
+Code:
+package WeeklyAssignment2;
+
+public class Program_ReplaceCharacter {
+
+	public static void main(String[] args) {
+		String str="banana";
+		char oldchar='a';
+		char newchar='o';
+
+		char[]word=str.toCharArray();
+		for(int i=0;i<word.length;i++)
+		{
+			if(word[i]==oldchar)
+			{
+				word[i]=newchar;
+			}
+		}
+		//System.out.println(word);
+		String newstr=new String(word);
+		System.out.println(newstr);
+		
+	}
+
+}
+
+Output:
+bonono
+
+Q4)Find All Substrings of a String
+Write a Java program to print all possible non-empty substrings of a given string.
+Example:
+Input: ABC
+
+Output:
+A
+AB
+ABC
+B
+BC
+C
+
+Code:
+package WeeklyAssignment2;
+
+public class Program_NonEmptySubString {
+
+	public static void main(String[] args) {
+	String str="ABC";
+	
+	for(int i =0;i<str.length();i++)
+	{
+		for(int j=i+1;j<=str.length();j++)
+		{
+			System.out.println(str.substring(i, j));
+		}
+		
+	}
+
+	}
+
+}
+
+
+Output:
+A
+AB
+ABC
+B
+BC
+C
