@@ -1,0 +1,91 @@
+Question:
+Problem Statement: Smart Device Management System
+Create a Java application to demonstrate multiple inheritance using interfaces.
+You are required to develop a SmartPhone class that implements two interfaces:
+1.	Camera – Defines camera-related operations.
+2.	MusicPlayer – Defines music-related operations.
+1. Create Interface: Camera
+Declare the following abstract methods:
+•	takePhoto() – Displays "Photo captured successfully."
+•	recordVideo() – Displays "Video recording started."
+2. Create Interface: MusicPlayer
+Declare the following abstract methods:
+•	playMusic() – Displays "Music is playing."
+•	stopMusic() – Displays "Music stopped."
+3. Create Class: SmartPhone
+•	Implement both Camera and MusicPlayer interfaces.
+•	Provide implementation for all four abstract methods.
+•	Create an additional method makeCall() that displays "Making a phone call."
+4. Create Main Class: Main
+Inside the main() method:
+1.	Create an object of the SmartPhone class.
+2.	Call all five methods using the object.
+Expected Output
+Photo captured successfully.
+Video recording started.
+Music is playing.
+Music stopped.
+Making a phone call.
+
+
+Code:
+package dailyAssignment3;
+interface Camera
+{
+	void takePhoto();
+	
+	void recordVideo();
+	
+}
+interface MusicPlayer
+{
+void playMusic();
+
+void stopMusic();
+}
+class SmartPhone implements Camera, MusicPlayer
+{
+	public void takePhoto()
+	{
+		System.out.println("Photo captured successfully.");
+	}
+	
+	public void recordVideo()
+	{
+		System.out.println("Video recording started.");
+	}
+	
+	public void playMusic()
+	{
+		System.out.println("Music is playing.");
+	}
+	public void stopMusic()
+	{
+		System.out.println("Music stopped");
+	}
+	void makeCall()
+	{
+		System.out.println("Making a phone call");
+	}
+}
+
+public class Program_SmartDeviceManagmentSystem {
+
+	public static void main(String[] args) {
+		SmartPhone sp=new SmartPhone();
+		sp.takePhoto();
+		sp.recordVideo();
+		sp.playMusic();
+		sp.stopMusic();
+		sp.makeCall();
+
+	}
+
+}
+
+Output:
+Photo captured successfully.
+Video recording started.
+Music is playing.
+Music stopped
+Making a phone call
