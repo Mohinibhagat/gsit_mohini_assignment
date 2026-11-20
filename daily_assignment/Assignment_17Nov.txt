@@ -1,0 +1,89 @@
+Question:
+Question 1: Employee Management System – Java Stream API
+Create an Employee class with the following two fields:
+•	String name
+•	double salary
+Requirements:
+1.	Create an Employee class with the above two fields.
+2.	Create a constructor to initialize these fields.
+3.	Create 4 Employee objects.
+4.	Store all employees in an ArrayList<Employee>.
+5.	Use Stream API's filter() to find employees whose salary is greater than ₹50,000.
+6.	Use forEach() to print the name and salary of filtered employees.
+Sample Input (Employee Records):
+Name	Salary
+Amit	45000
+Rahul	65000
+Anjali	75000
+Priya	40000
+Expected Output:
+Employees earning more than 50000:
+
+Rahul - 65000
+Anjali - 75000
+
+
+Code:
+package dailyAssignment3;
+import java.util.stream.Collectors;
+import java.util.*;
+
+
+
+//import day7.Student_GSIT;
+
+class Employee1
+{
+	String name;
+	double salary;
+	public Employee1(String name, double salary) {
+		this.name = name;
+		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	
+}
+public class Program_JavaStream {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee1 obj1=new Employee1("Amit",45000);
+		Employee1 obj2=new Employee1("Rahul",65000);
+		Employee1 obj3=new Employee1("Anjali",75000);
+		Employee1 obj4=new Employee1("Priya",40000);
+		List<Employee1>list=new ArrayList<Employee1>();
+		list.add(obj1);
+		list.add(obj2);
+		list.add(obj3);
+		list.add(obj4);
+		
+		  List<Employee1>filterEmployee=
+	    		   list.stream().filter(e->e.getSalary()>50000)
+	    		   .collect(Collectors.toList());
+	       System.out.println("Employee earning more than 50000:\n");
+	       filterEmployee.stream().forEach(e->System.out.println(e.getName()+"-"+e.getSalary()));
+	       
+
+		
+
+	}
+
+}
+
+Output:
+Employee earning more than 50000:
+
+Rahul-65000.0
+Anjali-75000.0

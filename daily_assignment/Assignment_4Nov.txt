@@ -1,0 +1,142 @@
+Question:
+1. Create Product Class
+Create a class named Product with the following properties:
+•	productId – int
+•	productName – String
+•	price – double
+•	quantity – int
+Create a parameterized constructor to initialize all the properties.
+2. Main Class Requirements
+Create an ArrayList<Product> and add the following three products:
+Product ID	Product Name	Price	Quantity
+101	Laptop	55000	5
+102	Mouse	800	10
+103	Keyboard	1500	0
+Perform the following operations:
+1.	Display all products using a for-each loop.
+2.	Display products whose quantity is less than 5.
+3.	Find and display the most expensive product.
+4.	Calculate the total inventory value using price × quantity.
+5.	Update the price of Mouse to ₹1,000.
+6.	Remove products whose quantity is zero.
+7.	Display the final product list.
+
+
+Code:
+package dailyAssignment3;
+import java.util.*;
+class Product1{
+	int productId;
+	String productName;
+	double price;
+	int quantity;
+	
+	Product1(int productId,String productName,double price,int quantity){
+		this.productId=productId;
+		this.productName =productName;
+		this.price=price;
+		this.quantity= quantity;
+	}
+
+	public static Product1 get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+
+public class Program_4NovQes {
+
+	public static void main(String[] args) {
+		
+			{
+				// TODO Auto-generated method stub
+				ArrayList<Product1>list = new ArrayList<Product1>();
+				Product1 p1 = new Product1(101,"Laptop",55000,5);
+				Product1 p2 = new Product1(102,"Mouse",800,10);
+				Product1 p3 = new Product1(103,"Keyboard",1500,0);
+				list.add(p1);
+				list.add(p2);
+				list.add(p3);
+				
+				// displaying all products
+				for (Product1 p : list) 
+				{
+					System.out.println(p.productId +" " +p.productName +" "+p.price+" "+p.quantity);
+				}
+				
+				//Product quantity less than 5
+				for (Product1 p : list) 
+				{
+					if(p.quantity <5) 
+					{
+						System.out.println("\nProducts list less than quantity 5 :"+p.productId +" " +p.productName +" "+p.price+" "+p.quantity);	
+					}
+				}
+				
+				//Most Expensive
+				Product1 expensive = list.get(0);
+		        for(Product1 p : list)
+		        {
+		            if(p.price > expensive.price)
+		            {
+		                expensive = p;
+		            }
+				}
+				System.out.println("\nMost Expensive product is :" + expensive.productId +" " +expensive.productName +" "+expensive.price+" "+expensive.quantity);
+				
+				//Total
+				double totalValue = 0;
+		        for(Product1 p : list)
+		        {
+		            totalValue = totalValue + (p.price * p.quantity);
+		        }
+		        System.out.println("\nTotal Inventory Value: " + totalValue);
+		        
+		        
+		        //Mouse - price update
+		        for(Product1 p : list)
+		        {
+		            if(p.productName.equals("Mouse"))
+		            {
+		                p.price = 1000;
+		                System.out.println("\n"+p.productId +" " +p.productName +" "+p.price+" "+p.quantity);
+		            }
+		        }
+		        System.out.println("Mouse price updated successfully.");
+		        
+		        
+		        //remove product 
+		        for(int i = 0; i < list.size(); i++)
+		        {
+		            if(list.get(i).quantity == 0)
+		            {
+		                list.remove(i);
+		                i--;
+		            }
+		        }
+		        
+		        //final products
+		        System.out.println("\nFinal Product List:");
+		        for(Product1 p : list)
+		        {
+		        	System.out.println(p.productId +" " +p.productName +" "+p.price+" "+p.quantity);
+		        }
+
+	}
+
+}
+}
+
+Output:
+Products list less than quantity 5 :103 Keyboard 1500.0 0
+
+Most Expensive product is :101 Laptop 55000.0 5
+
+Total Inventory Value: 283000.0
+
+102 Mouse 1000.0 10
+Mouse price updated successfully.
+
+Final Product List:
+101 Laptop 55000.0 5
+102 Mouse 1000.0 10

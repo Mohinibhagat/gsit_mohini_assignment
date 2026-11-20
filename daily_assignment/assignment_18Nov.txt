@@ -1,0 +1,88 @@
+Question:
+ava Stream API Assignment â€“ Sorting and Finding Sum
+Problem Statement: Employee Salary Analysis Using Stream API
+
+Create an Employee class with the following two fields:
+1. name â€“ String
+2. salary â€“ double
+Create 3 Employee objects and add them to an ArrayList.
+Input
+Employee Name	Salary
+Rahul	50000
+Priya	70000
+Amit	60000
+
+Tasks
+1. Use Stream API to sort employees by salary in ascending order.
+2. Use Stream API to sort employees by salary in descending order.
+3. Use Stream API to calculate the total salary of all employees using mapToDouble() and sum().
+
+Code:
+package dailyAssignment3;
+import java.util.*;
+
+
+class Employee5{
+	String name;
+	double salary;
+	public Employee5(String name, double salary) {
+		this.name = name;
+		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+}
+
+public class Program_JavaStream2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				
+				Employee5 obj1= new Employee5("Rahul",50000);
+				Employee5 obj2= new Employee5("Priya",70000);
+				Employee5 obj3= new Employee5("Amit",60000);
+				
+				ArrayList<Employee5>list = new ArrayList<Employee5>();
+				
+				list.add(obj1);
+				list.add(obj2);
+				list.add(obj3);
+				
+				System.out.println("Ascending order based on salary");
+				list.stream().sorted(Comparator.comparingDouble(Employee5::getSalary)).
+				forEach(e->System.out.println(e.name +" " + e.salary));
+				
+				System.out.println("\nDescending order based on salary");
+				list.stream().sorted(Comparator.comparingDouble(Employee5::getSalary).
+				reversed()).
+				forEach(e->System.out.println(e.name +" " + e.salary));
+				
+				double totalsal = list.stream().mapToDouble(Employee5::getSalary).sum();
+				System.out.println("\nTotal Salary is :" +totalsal);
+
+	}
+
+}
+
+Ascending order based on salary
+Rahul 50000.0
+Amit 60000.0
+Priya 70000.0
+
+Descending order based on salary
+Priya 70000.0
+Amit 60000.0
+Rahul 50000.0
+
+Total Salary is :180000.0

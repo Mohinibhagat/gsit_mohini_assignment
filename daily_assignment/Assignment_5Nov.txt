@@ -1,0 +1,48 @@
+Question:
+Q1. Remove Duplicate Numbers
+Create a Java program that:
+1.	Creates an ArrayList<Integer> containing duplicate numbers.
+2.	Converts the ArrayList into a HashSet.
+3.	Displays only unique numbers.
+4.	Prints the total number of unique elements.
+Input:
+[10, 20, 30, 10, 40, 20, 50, 30]
+Expected Output:
+Unique Elements: [10, 20, 30, 40, 50]
+Total Unique Elements: 5
+
+Code:
+package dailyAssignment3;
+import java.util.*;
+
+public class Program_5NovQes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+				ArrayList<Integer> numbers = new ArrayList<>();
+
+		        numbers.add(10);
+		        numbers.add(20);
+		        numbers.add(30);
+		        numbers.add(10);
+		        numbers.add(40);
+		        numbers.add(20);
+		        numbers.add(50);
+		        numbers.add(30);
+
+		        LinkedHashSet<Integer> uniqueNumbers = new LinkedHashSet<>(numbers);
+
+		        System.out.println("Unique Elements: " + uniqueNumbers);
+		        System.out.println("Total Unique Elements: " + uniqueNumbers.size());
+
+			}
+
+		
+
+	}
+
+
+Output:
+Unique Elements: [10, 20, 30, 40, 50]
+Total Unique Elements: 5
