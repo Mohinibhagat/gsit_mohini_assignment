@@ -1,0 +1,225 @@
+13 Nov
+Question1:
+
+Question 1: Bank Account Withdrawal
+Create a Java program to simulate a bank account withdrawal system.
+Requirements:
+1.	Create a BankAccount class with:
+o	accountHolder
+o	balance
+2.	Create a method withdraw(double amount).
+3.	If the withdrawal amount is greater than the available balance, handle the exception.
+4.	If the user enters a negative withdrawal amount, handle the invalid input.
+5.	Use finally to print "Transaction process completed".
+Expected Output 1:
+Account Holder: Rahul
+Current Balance: 10000
+Withdrawal Amount: 3000
+Remaining Balance: 7000
+Transaction process completed
+Expected Output 2:
+Account Holder: Rahul
+Current Balance: 10000
+Withdrawal Amount: 15000
+Insufficient balance!
+Transaction process completed
+
+Code1:
+package WeeklyAssignment2;
+class BankAccount
+{
+	String accountHolder;
+	double balance;
+	BankAccount(String accountHolder,double balance)
+	{
+		this.accountHolder=accountHolder;
+		this.balance=balance;
+	}
+	void withdraw(double amount) throws Exception
+	{
+		 System.out.println("Withdrawl Amount:"+amount);
+	      if(amount>balance)
+	    	  throw new Exception("Insufficient Balance!");
+	      else
+	      {
+	    	  double remainingBalance=balance-amount;
+	    	  System.out.println("Remaining Balance:"+remainingBalance);
+	      }
+	}
+}
+
+public class Program_BankAccountWithdrawal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  BankAccount ba=new BankAccount("Rahul",10000);
+	         System.out.println("Account Holder:"+ba.accountHolder);
+	         System.out.println("Current Balance:"+ba.balance);
+	         try {
+	        	 ba.withdraw(3000);
+	         }
+	         catch(Exception ex)
+	         {
+	        	 System.out.println(ex.getMessage());
+	         }
+	         finally
+	         {
+	        	 System.out.println("Transaction Process Completed");
+	         }
+	}
+
+}
+
+Output1:
+Account Holder:Rahul
+Current Balance:10000.0
+Withdrawl Amount:3000.0
+Remaining Balance:7000.0
+Transaction Process Completed
+
+
+Code2:
+package WeeklyAssignment2;
+class BankAccount
+{
+	String accountHolder;
+	double balance;
+	BankAccount(String accountHolder,double balance)
+	{
+		this.accountHolder=accountHolder;
+		this.balance=balance;
+	}
+	void withdraw(double amount) throws Exception
+	{
+		 System.out.println("Withdrawl Amount:"+amount);
+	      if(amount>balance)
+	    	  throw new Exception("Insufficient Balance!");
+	      else
+	      {
+	    	  double remainingBalance=balance-amount;
+	    	  System.out.println("Remaining Balance:"+remainingBalance);
+	      }
+	}
+}
+
+public class Program_BankAccountWithdrawal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  BankAccount ba=new BankAccount("Rahul",10000);
+	         System.out.println("Account Holder:"+ba.accountHolder);
+	         System.out.println("Current Balance:"+ba.balance);
+	         try {
+	        	 ba.withdraw(15000);
+	         }
+	         catch(Exception ex)
+	         {
+	        	 System.out.println(ex.getMessage());
+	         }
+	         finally
+	         {
+	        	 System.out.println("Transaction Process Completed");
+	         }
+	}
+
+}
+
+Output2:
+Account Holder:Rahul
+Current Balance:10000.0
+Withdrawl Amount:15000.0
+Insufficient Balance!
+Transaction Process Completed
+
+Question2:
+Question 2: Student Marks Calculator
+Create a Java program to calculate the average marks of a student in 5 subjects.
+Requirements:
+1.	Take marks of 5 subjects from the user.
+2.	Store the marks in an integer array.
+3.	Calculate the total and average marks.
+4.	Handle the following exceptions:
+o	InputMismatchException if the user enters a non-integer value.
+o	ArrayIndexOutOfBoundsException if an invalid array index is accessed.
+5.	Use a finally block to print "Marks calculation process completed".
+Expected Output 1:
+Enter marks of 5 subjects:
+80
+75
+90
+85
+70
+
+Total Marks: 400
+Average Marks: 80.0
+Marks calculation process completed
+Expected Output 2:
+Enter marks of 5 subjects:
+80
+75
+abc
+
+Invalid input! Please enter integer marks.
+Marks calculation process completed
+
+Code:
+package WeeklyAssignment2;
+import java.util.*;
+
+public class Program_Student_Marks_Calculator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		      Scanner sc=new Scanner(System.in);
+            int[] arr=new int[5];
+            int sum=0;
+            System.out.println("Enter marks of 5 subjects:");
+            for(int i=0;i<=arr.length;i++)
+            {
+      	      int num=sc.nextInt();
+      	      arr[i]=num;
+      	      sum+=num;
+             }
+  	      System.out.println("Total Marks:"+sum);
+            float average=sum/arr.length;
+            System.out.println("Average Marks:"+average);
+          }
+     catch(ArrayIndexOutOfBoundsException e)
+     {
+  	   System.out.println("Array Index Out of Bounds Exception");
+     }
+     catch(Exception e)
+     {
+  	   System.out.println("Invalid input! Please enter integer marks");
+     }
+     
+     finally
+     {
+  	   System.out.println("Marks calculation process completed");
+     }
+	}
+
+}
+Output1:
+Enter marks of 5 subjects:
+80
+75
+90
+85
+70
+
+Total Marks: 400
+Average Marks: 80.0
+Marks calculation process completed
+
+
+Output2:
+Enter marks of 5 subjects:
+90
+50
+abc
+Invalid input! Please enter integer marks
+Marks calculation process completed
+
+
